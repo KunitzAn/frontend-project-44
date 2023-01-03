@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
+import checkAnswer from './checker.js';
 
 const generateRandomInt = () => {
   const randomInt = Math.floor(Math.random() * 100);
@@ -38,12 +39,8 @@ const startGameCalc = () => {
     const userAnswer = readlineSync.question(`Question: ${int1} ${sign} ${int2} \nYour answer: `);
     const correctAnswer = calculate(int1, int2, sign);
 
-    if (userAnswer == correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'. \nLet\`s try again, ${userName}!`);
-      return;
-    }
+    const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
+    if(checkedAnswer === false) return;
 
     i++;
   }
