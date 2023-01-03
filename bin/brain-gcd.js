@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
-import {checkAnswer, generateRandomInt} from './modules.js';
-
+import { checkAnswer, generateRandomInt } from '../src/modules.js';
 
 const calculate = (x, y) => {
   if (y > x) return calculate(y, x);
@@ -23,7 +22,7 @@ const startGameGcd = () => {
     const correctAnswer = calculate(int1, int2);
 
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
-    if(checkedAnswer === false) return;
+    if (checkedAnswer === false) return;
 
     i++;
   }
