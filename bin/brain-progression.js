@@ -34,7 +34,7 @@ const startGameProgression = () => {
       str = `${str} ${progression[j]}`;
     }
 
-    const userAnswer = readlineSync.question(`Question: ${str} \nYour answer: `);
+    const userAnswer = readlineSync.question(`Question:${str} \nYour answer: `);
 
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
     if (checkedAnswer === false) return;
