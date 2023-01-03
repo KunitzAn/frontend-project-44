@@ -22,7 +22,12 @@ function findPrime(n) {
 
 export function startGame(str) {
   const userName = greetUser();
-  console.log(`Answer "yes" if the number is ${str}, otherwise answer "no".`);
+  if (str === 'prime') {
+    console.log(`Answer "yes" if given number is ${str}. Otherwise answer "no".`)
+  } else {
+    console.log(`Answer "yes" if the number is ${str}, otherwise answer "no".`);
+  }
+
 
   let i = 0;
   while (i < 3) {
