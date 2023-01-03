@@ -18,10 +18,8 @@ const startGameEven = () => {
   let i = 0;
   while (i < 3) {
       const int = generateRandomInt();
-
       const userAnswer = readlineSync.question(`Question: ${int} \nYour answer: `);
       const correctAnswer = calculateCorrectAnswer(int);
-
       const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
       if(checkedAnswer === false) return;
 
