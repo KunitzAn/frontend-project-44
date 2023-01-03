@@ -3,8 +3,9 @@ import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
 import { checkAnswer } from '../src/modules.js';
 
-const generateRandomIntBetween = (min, max) => // The value is no lower than min, and is less than (but not equal to) max
+const generateRandomIntBetween = (min, max) => {
   Math.floor(Math.random() * (max - min) + min);
+};
 
 const generateProgression = () => {
   const result = [];
@@ -13,7 +14,7 @@ const generateProgression = () => {
   const progressionLength = generateRandomIntBetween(5, 11);
   while (i <= progressionLength) {
     result.push(gradient * i);
-    i++;
+    i += 1;
   }
   return result;
 };
@@ -29,8 +30,8 @@ const startGameProgression = () => {
     const correctAnswer = progression[missedIntInd - 1];
     progression[missedIntInd - 1] = '..';
 
-    let str = ``;
-    for (let j = 0; j < progression.length; j++) {
+    let str = '';
+    for (let j = 0; j < progression.length; j += 1) {
       str = `${str} ${progression[j]}`;
     }
 
@@ -39,7 +40,7 @@ const startGameProgression = () => {
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
     if (checkedAnswer === false) return;
 
-    i++;
+    i += 1;
   }
 
   console.log(`Congratulations, ${userName}!`);

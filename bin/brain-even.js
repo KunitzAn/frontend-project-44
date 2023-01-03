@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startGame } from '../src/prime&even-modules.js';
+import startGame from '../src/prime-even-modules.js';
 
 startGame('even');

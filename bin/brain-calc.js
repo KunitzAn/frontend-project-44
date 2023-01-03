@@ -32,13 +32,14 @@ const startGameCalc = () => {
     const int2 = generateRandomInt();
     const sign = generateRandomSign();
 
-    const userAnswer = readlineSync.question(`Question: ${int1} ${sign} ${int2} \nYour answer: `);
+    const curAnswer = readlineSync.question(`Question: ${int1} ${sign} ${int2} \nYour answer: `);
+    const userAnswer = +curAnswer;
     const correctAnswer = calculate(int1, int2, sign);
 
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
     if (checkedAnswer === false) return;
 
-    i++;
+    i += 1;
   }
 
   console.log(`Congratulations, ${userName}!`);

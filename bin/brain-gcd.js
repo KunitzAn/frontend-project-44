@@ -24,7 +24,7 @@ const startGameGcd = () => {
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
     if (checkedAnswer === false) return;
 
-    i++;
+    i += 1;
   }
 
   console.log(`Congratulations, ${userName}!`);
