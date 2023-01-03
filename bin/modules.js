@@ -1,5 +1,4 @@
-
-export default function checkAnswer(userAnswer, correctAnswer, userName) {
+export function checkAnswer(userAnswer, correctAnswer, userName) {
     if (userAnswer == correctAnswer) {
         console.log('Correct!');
       } else {
@@ -7,3 +6,9 @@ export default function checkAnswer(userAnswer, correctAnswer, userName) {
         return false;
       }
 }
+
+export function generateRandomInt() {
+    const randomInt = Math.floor(Math.random() * 100);
+    return randomInt;
+};
+

@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
-import checkAnswer from './checker.js';
-
-const generateRandomInt = () => {
-    const randomInt = Math.floor(Math.random() * 100);
-    return randomInt;
-};
+import {checkAnswer, generateRandomInt} from './modules.js';
 
 const calculateCorrectAnswer = (n) => {
     if(n <= 1) {

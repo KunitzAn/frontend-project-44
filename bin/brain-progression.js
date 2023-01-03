@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
-import checkAnswer from './checker.js';
+import {checkAnswer} from './modules.js';
 
-
-const generateRandomInt = (max) =>{
-    return Math.floor(Math.random() * max);
-}
 
 const generateRandomIntBetween = (min, max) => { //The value is no lower than min, and is less than (but not equal to) max
     return Math.floor(Math.random() * (max - min) + min); 

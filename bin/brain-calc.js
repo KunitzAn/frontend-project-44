@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
-import checkAnswer from './checker.js';
+import {checkAnswer, generateRandomInt} from './modules.js';
 
-const generateRandomInt = () => {
-  const randomInt = Math.floor(Math.random() * 100);
-  return randomInt;
-};
+
 const generateRandomSign = () => {
   const signs = ['-', '+', '*'];
   const signIndex = Math.floor(Math.random() * signs.length);
