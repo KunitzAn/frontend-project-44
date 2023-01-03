@@ -8,7 +8,7 @@ sessionStorage.setItem('rightAnswers', 0);
 const checkUserAnswer = () => {
   const randomInt = generateRandonInt();
   const userAnswer = readlineSync.question(`Question ${randomInt} `);
-  console.log(isEven(randomInt, userAnswer));
+  console.log(checkIsEven(randomInt, userAnswer));
 };
 
 const generateRandonInt = () => {
@@ -16,28 +16,25 @@ const generateRandonInt = () => {
   return randomInt;
 };
 
-const isEven = (randomInt, userAnswer) => {
-  if (randomInt % 2 === 0) {
-    if (userAnswer === 'yes') {
+
+const checkIsEven = (randomInt, userAnswer) => {
+    if((randomInt % 2 === 0 && userAnswer === 'yes') || (!(randomInt % 2 === 0) && userAnswer === 'no')) {
       const curRightAnswers = sessionStorage.getItem('rightAnswers');
       sessionStorage.setItem('rightAnswers', curRightAnswers + 1);
       return ('Correct!');
-    } else{
+    }
+
+    if (randomInt % 2 === 0 && userAnswer === 'no') {
         const curRightAnswers = sessionStorage.getItem('rightAnswers');
         sessionStorage.setItem('rightAnswers', curRightAnswers - 3);
         return (`'${userAnswer}' is wrong answer. Correct answer was 'yes'`);
-    }
-  } else {
-    if (userAnswer === 'no') {
-        const curRightAnswers = sessionStorage.getItem('rightAnswers');
-        sessionStorage.setItem('rightAnswers', curRightAnswers + 1);
-        return ('Correct!');
-      } else{
+    } 
+
+    if(!(randomInt % 2 === 0) && userAnswer === 'yes') {
         const curRightAnswers = sessionStorage.getItem('rightAnswers');
         sessionStorage.setItem('rightAnswers', curRightAnswers - 3);
         return (`'${userAnswer}' is wrong answer. Correct answer was 'no'`);
-      }
-  }
+    }
 };
 
 console.log('Welcome to the Brain Games!');
