@@ -22,17 +22,16 @@ const checkIsEven = (randomInt, userAnswer) => {
       const curRightAnswers = sessionStorage.getItem('rightAnswers');
       sessionStorage.setItem('rightAnswers', curRightAnswers + 1);
       return ('Correct!');
+    } else {
+        const curRightAnswers = sessionStorage.getItem('rightAnswers');
+        sessionStorage.setItem('rightAnswers', curRightAnswers - 3);
     }
 
     if (randomInt % 2 === 0 && userAnswer === 'no') {
-        const curRightAnswers = sessionStorage.getItem('rightAnswers');
-        sessionStorage.setItem('rightAnswers', curRightAnswers - 3);
         return (`'${userAnswer}' is wrong answer. Correct answer was 'yes'`);
     } 
 
     if(!(randomInt % 2 === 0) && userAnswer === 'yes') {
-        const curRightAnswers = sessionStorage.getItem('rightAnswers');
-        sessionStorage.setItem('rightAnswers', curRightAnswers - 3);
         return (`'${userAnswer}' is wrong answer. Correct answer was 'no'`);
     }
 };
