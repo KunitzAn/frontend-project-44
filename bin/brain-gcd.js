@@ -18,7 +18,8 @@ const startGameGcd = () => {
     const int1 = generateRandomInt();
     const int2 = generateRandomInt();
 
-    const userAnswer = readlineSync.question(`Question: ${int1} ${int2} \nYour answer: `);
+    const curAnswer = readlineSync.question(`Question: ${int1} ${int2} \nYour answer: `);
+    const userAnswer = +curAnswer;
     const correctAnswer = calculate(int1, int2);
 
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
