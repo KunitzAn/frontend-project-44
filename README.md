@@ -3,9 +3,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/16a031af81231e5c6340/maintainability)](https://codeclimate.com/github/KunitzAn/frontend-project-44/maintainability)
 
 ## Prerequirements:
-- latest Node.js version;
-- latest npm version; 
-- setup [make](https://makefiletutorial.com/#the-versions-and-types-of-make).
+- latest Node.js version
+- latest npm version
+- setup [make](https://makefiletutorial.com/#the-versions-and-types-of-make)
 
 ## Setup
 ```
