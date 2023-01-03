@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import sessionStorage from 'sessionstorage-for-nodejs';
-import { greetUser } from '../src/cli.js';
+import greetUser from '../src/cli.js';
 
 sessionStorage.setItem('rightAnswers', 0);
 
@@ -36,17 +36,15 @@ const checkIsEven = (randomInt, userAnswer) => {
     }
 };
 
-console.log('Welcome to the Brain Games!');
-greetUser();
+const userName = greetUser();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 while (sessionStorage.getItem('rightAnswers') >= 0 && sessionStorage.getItem('rightAnswers') < 3) {
   checkUserAnswer();
 }
 
-const name = sessionStorage.getItem('userName');
 if (sessionStorage.getItem('rightAnswers') === 3) {
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 } else {
-  console.log(`Let's try again, ${name}!`);
+  console.log(`Let's try again, ${userName}!`);
 }

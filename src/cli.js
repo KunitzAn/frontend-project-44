@@ -1,10 +1,8 @@
 import readlineSync from 'readline-sync';
-import sessionStorage from 'sessionstorage-for-nodejs';
 
-const greetUser = () => {
+export default function greetUser() {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
-  sessionStorage.setItem('userName', userName);
   console.log(`Hello, ${userName}!`);
-};
-
-export { greetUser };
+  return userName;
+}
