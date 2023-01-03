@@ -11,3 +11,6 @@
 
 ### Brain-gcd
 [![asciicast](https://asciinema.org/a/OudQotqmvTVSEYH1uG2jsUBh9.svg)](https://asciinema.org/a/OudQotqmvTVSEYH1uG2jsUBh9)
+
+### Brain-prog
+[![asciicast](https://asciinema.org/a/bl7irdGUItZ8zJJnwCqSymZpB.svg)](https://asciinema.org/a/bl7irdGUItZ8zJJnwCqSymZpB)
