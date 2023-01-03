@@ -3,9 +3,7 @@ import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
 import { checkAnswer } from '../src/modules.js';
 
-const generateRandomIntBetween = (min, max) => {
-  Math.floor(Math.random() * (max - min) + min);
-};
+const generateRandomIntBetween = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const generateProgression = () => {
   const result = [];
@@ -30,19 +28,19 @@ const startGameProgression = () => {
     const correctAnswer = progression[missedIntInd - 1];
     progression[missedIntInd - 1] = '..';
 
-    let str = '';
-    for (let j = 0; j < progression.length; j += 1) {
-      str = `${str} ${progression[j]}`;
+    let str = `${progression[0]}`;
+    for (let k = 1; k < progression.length; k += 1) {
+      str = `${str}, ${progression[k]}`;
     }
 
-    const userAnswer = readlineSync.question(`Question:${str} \nYour answer: `);
-
+    const curAnswer = readlineSync.question(`Question: ${str} \nYour answer: `);
+    const userAnswer = +curAnswer;
     const checkedAnswer = checkAnswer(userAnswer, correctAnswer, userName);
-    if (checkedAnswer === false) return;
-
+    if (checkedAnswer === false) {
+      return;
+    }
     i += 1;
   }
-
   console.log(`Congratulations, ${userName}!`);
 };
 
