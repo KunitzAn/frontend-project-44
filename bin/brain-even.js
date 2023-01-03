@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
-import {checkAnswer, generateRandomInt} from './modules.js';
+import {checkAnswer, generateRandomInt, describeTask} from './modules.js';
 
 const calculateCorrectAnswer = (n) => {
   if(n % 2 === 0) {
@@ -13,7 +13,7 @@ const calculateCorrectAnswer = (n) => {
 
 const startGameEven = () => {
   const userName = greetUser();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  describeTask('even');
 
   let i = 0;
   while (i < 3) {

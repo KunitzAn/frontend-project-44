@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greetUser from '../src/cli.js';
-import {checkAnswer, generateRandomInt} from './modules.js';
+import {checkAnswer, generateRandomInt, describeTask} from './modules.js';
 
 const calculateCorrectAnswer = (n) => {
     if(n <= 1) {
@@ -17,7 +17,7 @@ const calculateCorrectAnswer = (n) => {
 
 const startGamePrime = () => {
     const userName = greetUser();
-    console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
+    describeTask('prime');
   
     let i = 0;
     while (i < 3) {

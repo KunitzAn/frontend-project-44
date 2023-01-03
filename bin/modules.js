@@ -12,3 +12,6 @@ export function generateRandomInt() {
     return randomInt;
 };
 
+export function describeTask(str) {
+  console.log(`Answer "yes" if the number is ${str}, otherwise answer "no".`);
+}
