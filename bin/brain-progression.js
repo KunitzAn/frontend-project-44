@@ -30,7 +30,7 @@ const startGameProgression = () => {
 
     let str = `${progression[0]}`;
     for (let k = 1; k < progression.length; k += 1) {
-      str = `${str}, ${progression[k]}`;
+      str = `${str} ${progression[k]}`;
     }
 
     const curAnswer = readlineSync.question(`Question: ${str} \nYour answer: `);
