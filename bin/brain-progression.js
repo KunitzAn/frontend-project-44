@@ -29,9 +29,9 @@ const startGameProgression = () => {
     const correctAnswer = progression[missedIntInd - 1];
     progression[missedIntInd - 1] = '..';
 
-    let str = `${progression[0]}`;
-    for (let j = 1; j < progression.length; j++) {
-      str = `${str}, ${progression[j]}`;
+    let str = ``;
+    for (let j = 0; j < progression.length; j++) {
+      str = `${str} ${progression[j]}`;
     }
 
     const userAnswer = readlineSync.question(`Question: ${str} \nYour answer: `);
