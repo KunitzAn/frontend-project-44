@@ -1,10 +1,15 @@
 import readlineSync from 'readline-sync';
 
-const startGame = (task, runTheGame) => {
-  // greeting
+function greet() {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
+  return userName;
+}
+
+function startGame(task, runTheGame) {
+  // greeting
+  const userName = greet();
 
   // task
   console.log(task);
@@ -23,6 +28,6 @@ const startGame = (task, runTheGame) => {
     console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
-};
+}
 
-export default startGame;
+export { greet, startGame };

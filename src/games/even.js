@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import {startGame} from '../index.js';
 import generateRandomInt from '../generateRandomInt.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -11,9 +11,9 @@ function findEven(n) {
 }
 
 const runTheGame = () => {
-  const int = generateRandomInt();
-  const question = `${int}`;
-  const answer = findEven(int);
+  const randomint = generateRandomInt();
+  const question = `${randomint}`;
+  const answer = findEven(randomint);
 
   return [question, answer];
 };

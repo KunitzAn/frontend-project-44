@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import {startGame} from '../index.js';
 import generateRandomInt from '../generateRandomInt.js';
 
 const task = 'What is the result of the expression?';

@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import {startGame} from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
