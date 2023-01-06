@@ -10,11 +10,11 @@ const calculate = (x, y) => {
 };
 
 const runTheGame = () => {
-  const int1 = generateRandomInt();
-  const int2 = generateRandomInt();
+  const randonInt1 = generateRandomInt();
+  const randomInt2 = generateRandomInt();
 
-  const question = `${int1} ${int2}`;
-  const answer = calculate(int1, int2);
+  const question = `${randonInt1} ${randomInt2}`;
+  const answer = calculate(randonInt1, randomInt2);
 
   return [question, answer];
 };

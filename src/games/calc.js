@@ -23,12 +23,12 @@ const calculate = (int1, int2, sign) => {
 };
 
 const runTheGame = () => {
-  const int1 = generateRandomInt();
-  const int2 = generateRandomInt();
+  const randomInt1 = generateRandomInt();
+  const randomInt2 = generateRandomInt();
   const sign = generateRandomSign();
 
-  const question = `${int1} ${sign} ${int2}`;
-  const answer = calculate(int1, int2, sign);
+  const question = `${randomInt1} ${sign} ${randomInt2}`;
+  const answer = calculate(randomInt1, randomInt2, sign);
 
   return [question, answer];
 };

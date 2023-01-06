@@ -3,12 +3,12 @@ import generateRandomInt from '../generateRandomInt.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const ifEven = (number) => number % 2 === 0;
+const isEven = (number) => number % 2 === 0;
 
 const runTheGame = () => {
   const randomNumber = generateRandomInt();
   const question = `${randomNumber}`;
-  const answer = ifEven(randomNumber) ? 'yes' : 'no';
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
 
   return [question, answer];
 };
